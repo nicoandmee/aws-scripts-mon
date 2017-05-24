@@ -1,0 +1,28 @@
+# Source: <source package name; defaults to package name>
+Section: perl
+Priority: optional
+Homepage: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
+Standards-Version: 3.9.2
+
+Package: aws-scripts-mon
+Version: {{Version}}
+Maintainer: Issuu Operations <operations@issuu.com>
+Architecture: any
+Depends: perl, libwww-perl, libdatetime-perl, libany-uri-escape-perl
+# Copyright: <copyright file; defaults to GPL2>
+# Changelog: <changelog file; defaults to a generic changelog>
+# Readme: <README.Debian file; defaults to a generic one>
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+# Files: <pair of space-separated paths; First is file to include, second is destination>
+#  <more pairs, if there's more than one file to include. Notice the starting space>
+Files: ./mon-put-instance-data.pl /apps/issuu/aws-script-mon/
+ ./mon-get-instance-stats.pl /apps/issuu/aws-script-mon/
+ ./CloudWatchClient.pm /apps/issuu/aws-script-mon/
+ ./AwsSignatureV4.pm /apps/issuu/aws-script-mon/
+ ./aws-scripts-mon /etc/cron.d/
+Description: Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
+ The Amazon CloudWatch Monitoring Scripts for Amazon Elastic Compute Cloud (Amazon EC2)
+ Linux-based instances demonstrate how to produce and consume Amazon CloudWatch custom metrics.
+ These sample Perl scripts comprise a fully functional example that reports memory, swap,
+ and disk space utilization metrics for a Linux instance.
+ .

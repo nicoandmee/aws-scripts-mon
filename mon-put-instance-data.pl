@@ -351,9 +351,11 @@ elsif (defined($aggregated)) {
   $aggregated = INCL_AGGREGATED;
 }
 
+my $iam_roles;
 my $image_id;
 my $instance_type;
 if ($aggregated) {
+  $iam_roles = CloudWatchClient::get_iam_roles();
   $image_id = CloudWatchClient::get_image_id();
   $instance_type = CloudWatchClient::get_instance_type();
 }
@@ -479,6 +481,15 @@ sub add_metric
   if ($image_id) {
     %dims = (('ImageId' => $image_id), %xdims);
     add_single_metric($name, $unit, $value, \%dims);
+  }
+
+  if ($iam_roles) {
+    foreach my $iam_role ($iam_roles) {
+      if ($iam_role) {
+        %dims = (('IamRole' => $iam_role), %xdims);
+        add_single_metric($name, $unit, $value, \%dims);
+      }
+    }
   }
 
   if ($aggregated) {

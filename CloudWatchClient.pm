@@ -283,6 +283,16 @@ sub get_instance_type
 }
 
 #
+# Obtains EC2 IAM role from meta data.
+#
+sub get_iam_roles
+{
+  my $iam_dir = "/iam/security-credentials/";
+  my $roles = get_meta_data($iam_dir, USE_CACHE);
+  return $roles;
+}
+
+#
 # Obtains EC2 image id from meta data.
 #
 sub get_image_id

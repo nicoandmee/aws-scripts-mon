@@ -15,10 +15,10 @@ Depends: perl, libwww-perl, libdatetime-perl, libany-uri-escape-perl
 # Extra-Files: <comma-separated list of additional files for the doc directory>
 # Files: <pair of space-separated paths; First is file to include, second is destination>
 #  <more pairs, if there's more than one file to include. Notice the starting space>
-Files: ./mon-put-instance-data.pl /apps/issuu/aws-script-mon/
- ./mon-get-instance-stats.pl /apps/issuu/aws-script-mon/
- ./CloudWatchClient.pm /apps/issuu/aws-script-mon/
- ./AwsSignatureV4.pm /apps/issuu/aws-script-mon/
+Files: ./mon-put-instance-data.pl /apps/issuu/aws-scripts-mon/
+ ./mon-get-instance-stats.pl /apps/issuu/aws-scripts-mon/
+ ./CloudWatchClient.pm /apps/issuu/aws-scripts-mon/
+ ./AwsSignatureV4.pm /apps/issuu/aws-scripts-mon/
  ./aws-scripts-mon /etc/cron.d/
 Description: Monitoring Memory and Disk Metrics for Amazon EC2 Linux Instances
  The Amazon CloudWatch Monitoring Scripts for Amazon Elastic Compute Cloud (Amazon EC2)

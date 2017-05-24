@@ -1,4 +1,4 @@
 #
 # cron.d/aws-scripts-mon -- schedules periodic monitoring of instance mem and dist usage to cloudwatch
 #
-* * * * * root /usr/bin/nice -n 19 /usr/bin/ionice -c2 -n7 /apps/issuu/aws-scripts-mon/mon-put-instance-data.pl --mem-util --mem-used --mem-avail --mem-used-incl-cache-buff --disk-space-util --disk-path=/ --memory-units=gigabytes --disk-space-units=gigabytes --from-cron
+* * * * * root /usr/bin/nice -n 19 /usr/bin/ionice -c2 -n7 /apps/issuu/aws-scripts-mon/mon-put-instance-data.pl --mem-util --mem-used --mem-avail --mem-used-incl-cache-buff --disk-space-util --disk-path=/ --memory-units=gigabytes --disk-space-units=gigabytes --aggregated --auto-scaling --from-cron
